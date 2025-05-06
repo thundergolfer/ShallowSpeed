@@ -108,7 +108,7 @@ class Linear(Module):
         self.activation = ReLU() if activation == "relu" else None
         self._params["W"] = Parameter(
             rs.normal(0.0, 1.0, (out_dims, in_dims)).astype(np.float32)
-            / np.sqrt(in_dims)
+            / np.sqrt(in_dims, dtype=np.float32)
         )
         self._params["b"] = Parameter(np.zeros((1, out_dims), dtype=np.float32))
 
@@ -163,7 +163,7 @@ class MSELoss(Module):
         return dout
 
     def __repr__(self):
-        return f"MSELoss()"
+        return "MSELoss()"
 
 
 class Sequential(Module):

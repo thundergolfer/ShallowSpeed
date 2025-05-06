@@ -158,7 +158,7 @@ if __name__ == "__main__":
 
     # compare the absolute divergence between the two models
     sequential_model = MLP(input_size=28 * 28, hidden_size=64, output_size=10)
-    sequential_model.load_state_dict(torch.load(f"data/models/model_p1.pkl"))
+    sequential_model.load_state_dict(torch.load("data/models/model_p1.pkl"))
     divergence = 0
     for param1, param2 in zip(model.parameters(), sequential_model.parameters()):
         divergence += torch.abs(param1 - param2).sum().item()
