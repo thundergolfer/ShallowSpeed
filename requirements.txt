@@ -1,0 +1,11 @@
+# requirements.txt for uv
+mpi4py
+pandas
+scikit-learn
+matplotlib
+numpy
+jupyter
+pyarrow
+pytest
+pytest-mpi
+pre-commit

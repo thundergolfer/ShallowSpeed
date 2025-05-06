@@ -28,14 +28,15 @@ pytest
 ## Usage
 ```bash
 # Sequential training
-python train.py
+uv run python train.py
 # Data parallel distributed training
-mpirun -n 4 python train.py --dp 4
+uv run mpirun -n 4 python train.py --dp 4
 # Pipeline parallel distributed training
-mpirun -n 4 python train.py --pp 4 --schedule naive
+uv run mpirun -n 4 python train.py --pp 4 --schedule naive
 # Data & pipeline parallel distributed training
-mpirun -n 8 python train.py --dp 2 --pp 4 --schedule gpipe
+uv run mpirun -n 8 python train.py --dp 2 --pp 4 --schedule gpipe
 ```
+
 
 ## Internals
 ![](.github/assets/PP_pebble_graph.gif)
